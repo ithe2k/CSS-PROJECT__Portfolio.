@@ -1,0 +1,23 @@
+@use "../abstracts/abstracts" as abs;
+@use "sass:map";
+
+.btn {
+  position: relative;
+  @include abs.btn-idle();
+}
+
+.btn-form {
+  @include abs.btn-idle();
+  position: absolute;
+  bottom: -30px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid map.get(abs.$colors, "aqua");
+  padding-bottom: 10px;
+   @include abs.bp("lg") {
+      right: 28%;
+      bottom: -50px;
+}
+
+}

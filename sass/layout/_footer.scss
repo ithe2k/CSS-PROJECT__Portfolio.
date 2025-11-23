@@ -1,0 +1,131 @@
+@use "../abstracts/abstracts" as abs;
+@use "sass:map";
+footer {
+  background-color: map.get(abs.$colors, "grey");
+  position: relative;
+  .footer_container {
+    font-family: abs.$font-family-primary;
+    background-color: map.get(abs.$colors, "grey");
+    position: relative;
+    padding-top: 60px;
+    @include abs.bp("md") {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @include abs.bp("lg") {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    .contact-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include abs.bp("md") {
+        max-width: 50%;
+      }
+
+      h2 {
+        font-size: 40px;
+        font-weight: 700;
+        @include abs.bp("lg") {
+          margin-bottom: 40px;
+          font-size: map.get(abs.$font-sz, "hd-xl");
+        }
+      }
+      p {
+        @include abs.bd-m();
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        max-width: 95%;
+        padding: 0 15px;
+        @include abs.bp("md") {
+          padding: 0;
+        }
+        @include abs.bp("lg") {
+          width: 65%;
+          text-align: left;
+        }
+      }
+    }
+  }
+  .footer__elipse {
+    position: absolute;
+    top: 430px;
+    z-index: 1;
+    right: 50%;
+    overflow-x: hidden;
+    @include abs.bp("md") {
+      top: unset;
+      bottom: 120px;
+      right: 75%;
+    }
+    @include abs.bp("lg") {
+      right: 80%;
+      left: unset;
+    }
+  }
+  .footer_media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    @include abs.bp("md") {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 40px 10px;
+         margin-top: 0px
+    }
+    @include abs.bp("lg") {
+      justify-content: space-between;
+      width: 80%;
+      margin-left: 7%;
+      margin-top: 0px
+    }
+    h4 {
+      @include abs.hd-m();
+      @include abs.bp("md") {
+        @include abs.bd-xl();
+      }
+    }
+  }
+  .soc__media {
+    display: flex;
+    list-style: none;
+    gap: 26.6px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    @include abs.bp("md") {
+      margin: 0;
+    }
+     svg {
+        color: map.get(abs.$colors, "white");
+        &:hover {
+          color: map.get(abs.$colors, "aqua");
+        }
+      }
+  }
+  &::before {
+    content: "";
+    width: 95%;
+    height: 1px;
+    background-color: map.get(abs.$colors, "l-grey");
+    position: absolute;
+    bottom: 450px;
+    right: 10px;
+    z-index: 3;
+    @include abs.bp("md") {
+      top: unset;
+      bottom: 100px;
+      right: 20px;
+    }
+    @include abs.bp("lg") {
+      width: 80%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

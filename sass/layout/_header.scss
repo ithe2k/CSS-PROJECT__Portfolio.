@@ -1,0 +1,219 @@
+@use "../abstracts/abstracts" as abs;
+@use "sass:map";
+@use "../abstracts/functions" as f;
+
+header {
+  position: relative;
+  overflow: hidden;
+}
+
+.header_container {
+  font-family: abs.$font-family-primary;
+  background-color: map.get(abs.$colors, "black");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  @include abs.bp("md") {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    max-width: 100%;
+    top: 0;
+  }
+  @include abs.bp("lg") {
+    margin: 0px 50px 0px 50px;
+  }
+
+  &::before {
+    content: "";
+    background-color: map.get(abs.$colors, "white");
+    position: absolute;
+    bottom: 0px;
+    height: 2px;
+    width: 95%;
+  }
+
+  .hero__media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include abs.bp("md") {
+      flex-direction: row;
+      justify-content: space-between;
+      position: absolute;
+      top: 10px;
+      left: 5%;
+      z-index: 2;
+      width: 90%;
+    }
+    @include abs.bp("lg") {
+      left: 5%px;
+    }
+
+    p {
+      @include abs.hd-m();
+    }
+
+    .soc__media {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 25.6px;
+      margin-top: abs.to-rem(20);
+      z-index: 2;
+
+      @include abs.bp("md") {
+        gap: 32px;
+      }
+      svg {
+        color: map.get(abs.$colors, "white");
+        &:hover {
+          color: map.get(abs.$colors, "aqua");
+        }
+      }
+    }
+  }
+
+  .guy {
+    position: relative;
+    top: 0;
+    z-index: 1;
+    margin-top: 40px;
+    @include abs.bp("md") {
+      margin-bottom: 62px;
+      margin-top: 0;
+    }
+  }
+
+  .bg__guy {
+    position: absolute;
+    background: linear-gradient(transparent, map.get(abs.$colors, "l-black"));
+    width: 174px;
+    height: 350px;
+    top: 10px;
+    @include abs.bp("md") {
+      all: unset;
+    }
+  }
+
+  .hero__text {
+    margin: 40px 16px 80px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    @include abs.bp("md") {
+      padding-left: 33px;
+    }
+    @include abs.bp("lg") {
+      margin-top: 60px;
+    }
+
+    h1 {
+      text-align: center;
+      position: relative;
+      font-family: abs.$font-family-primary;
+      font-size: 40px;
+      font-weight: map.get(abs.$fonts-w, "bold");
+      line-height: 40px;
+      margin-bottom: 20px;
+      @include abs.bp("md") {
+        @include abs.hd-xl();
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 110%;
+        margin-left: 10%;
+
+        @include abs.bp("xl") {
+          @include abs.hd-xl();
+          display: inline-block;
+         
+        }
+
+        @include abs.bp("xxl") {
+          @include abs.hd-xxl();
+          display: inline-block;
+        }
+      }
+      .name {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          width: 95%;
+          left: 5%;
+          height: 5px;
+          background-color: aqua;
+          @include abs.bp("md") {
+            left: 0;
+          }
+        }
+      }
+    }
+
+    p {
+      @include abs.bd-m();
+      display: flex;
+      margin-bottom: 26px;
+      text-align: center;
+      @include abs.bp("md") {
+        @include abs.bd-l();
+        text-align: left;
+        margin-left: 2%;
+        margin-top: 50px;
+      }
+      @include abs.bp("lg") {
+        max-width: 70%;
+        align-self: flex-start;
+        margin-left: 0;
+        padding: 0;
+      }
+    }
+  }
+  .btn {
+    @include abs.bp("md") {
+      position: absolute;
+      left: 50px;
+      bottom: -50px;
+    }
+    @include abs.bp("lg") {
+      left: 30px;
+    }
+  }
+}
+
+.geometric__forms {
+  .header__elipse {
+    position: absolute;
+    top: 100px;
+    right: 50%;
+
+    @include abs.bp("md") {
+      right: 63%;
+      top: 7%;
+    }
+    @include abs.bp("lg") {
+      top: 17%;
+      left: -17%;
+    }
+  }
+  .header__oval {
+    position: absolute;
+    top: 240px;
+    left: 85%;
+    @include abs.bp("md") {
+      top: 470px;
+      z-index: 2;
+      left: 93%;
+    }
+    @include abs.bp("lg") {
+      top: 65%;
+      left: unset;
+      right: 50%;
+    }
+  }
+}

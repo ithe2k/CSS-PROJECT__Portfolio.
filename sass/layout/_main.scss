@@ -1,0 +1,161 @@
+@use "../abstracts/abstracts" as abs;
+@use "sass:map";
+
+main {
+  background-color: map.get(abs.$colors, "black");
+  font-family: abs.$font-family-primary;
+  overflow-x: hidden;
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    padding-bottom: 80px;
+    @include abs.bp("md") {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      margin-left: 3%;
+      margin-top: 52px;
+    }
+    position: relative;
+    @include abs.bp("md") {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      margin-left: 3%;
+      margin-top: 52px;
+    }
+    @include abs.bp("lg") {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      margin-left: 8%;
+      margin-top: 52px;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 24px;
+      @include abs.bp("md") {
+        align-items: flex-start;
+        margin-bottom: 52px;
+      }
+    }
+    h3 {
+      @include abs.bd-xl();
+      @include abs.bp("md") {
+        @include abs.hd-l;
+      }
+    }
+    p {
+      @include abs.bd-m();
+      @include abs.bp("md") {
+        @include abs.bd-l;
+      }
+    }
+    &::before {
+      content: "";
+      width: 95%;
+      height: 1px;
+      background-color: map.get(abs.$colors, "white");
+      position: absolute;
+      bottom: 11.5%;
+      @include abs.bp("md") {
+        all: unset;
+      }
+    }
+    img {
+      position: absolute;
+      left: 80%;
+      bottom: 0%;
+      overflow-x: hidden;
+      @include abs.bp("md") {
+        bottom: 13%;
+      }
+      @include abs.bp("lg") {
+        bottom: 20%;
+        left: 85%;
+            overflow-x: hidden;
+      }
+    }
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .projects-nav ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      gap: 40px;
+      margin-bottom: 40px;
+      @include abs.bp("md") {
+        gap: 300px;
+      }
+
+      h2 {
+        font-size: 40px;
+        font-weight: 700;
+        @include abs.bp("md") {
+          @include abs.hd-xl();
+        }
+      }
+    }
+
+    .articles {
+      @include abs.bp("md") {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 50px;
+        margin-bottom: 100px;
+      }
+    }
+
+    article {
+      margin-bottom: 40px;
+      position: relative;
+      h3 {
+        @include abs.hd-m();
+        padding: 20px 0px;
+      }
+      .prog__lang {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 20px;
+        p {
+          @include abs.bd-l();
+        }
+      }
+      .path {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 30px;
+        @include abs.bp("xl") {
+          position: absolute;
+          flex-direction: column;
+          align-items: center;
+          width: max-content;
+          gap: 50px;
+          bottom: 90px;
+          padding: 77px 93px;
+          background-color: rgba($color: #201f1f, $alpha: 0.8);
+          opacity: 0;
+          &:hover {
+            opacity: 1;
+          }
+        }
+         @include abs.bp("xxl"){
+            padding: 151px 191px;
+         }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@use "../abstracts/abstracts" as abs;
+@use "sass:map";
+
+.form {
+  margin-left: 20px;
+  position: relative;
+  @include abs.bp("md") {
+    width: 50%;
+    margin-left: 0;
+    margin-bottom: 100px;
+  }
+ 
+  .footer__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 50px;
+    margin-bottom: 40px;
+      @include abs.bp("lg") {
+       width: 75%;
+       margin-top: 0;
+      }
+
+    label {
+      margin-top: 20px;
+      color: map.get(abs.$colors, "l-grey");
+    }
+  }
+  .input__name, .input__email, .tarea  {
+    color: map.get(abs.$colors, "l-grey");
+    width: 95%;
+    background-color: map.get(abs.$colors, "grey");
+    border: none;
+    border-bottom: 1px solid white;
+  }
+}
+.input__email{
+  margin-bottom: 177px;
+   @include abs.bp("md") {
+   margin-bottom: 0;
+  }
+
+}
+.tarea{
+  margin-bottom: 10px;
+}

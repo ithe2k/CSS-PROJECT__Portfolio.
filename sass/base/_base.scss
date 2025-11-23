@@ -1,0 +1,21 @@
+@use "../abstracts/abstracts" as abs;
+@use "sass:map";
+@use "animations";
+@use "reset";
+@use "typography";
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: map.get(abs.$colors, "white");
+  background-color: map.get(abs.$colors, "black");
+}

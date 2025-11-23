@@ -1,0 +1,52 @@
+@use "./functions" as f;
+
+/* breakpoints */
+$breakpoint: (
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1080px,
+  "xxl": 1200px,
+
+);
+/*colors*/
+$colors: (
+  "black": #151515,
+  "l-black": #1f1f1f,
+  "grey": #242424,
+  "l-grey": #d9d9d9,
+  "white": #ffffff,
+  "aqua": #4ee1a0,
+);
+/*tipography*/
+$font-family-primary: "Space Grotesk", sans-serif;
+
+/*fonts*/
+$font-sz: (
+  "hd-xxl": f.to-rem(88),
+  "hd-xl": f.to-rem(72),
+  "hd-l": f.to-rem(48),
+  "hd-m": f.to-rem(24),
+  "bd-xl": f.to-rem(32),
+  "bd-l": f.to-rem(18),
+  "bd-m": f.to-rem(16),
+);
+
+$fonts-w: (
+  "medium": 500,
+  "bold": 700,
+  "extrabold": 800,
+);
+
+$line-h: (
+  "hd-xxl": f.to-rem(88),
+  "hd-xl": f.to-rem(72),
+  "hd-l": f.to-rem(56),
+  "hd-m": f.to-rem(32),
+  "bd-l": f.to-rem(28),
+);
+
+$word-sp: (
+  "hd-xxl": f.to-rem(-2.5),
+  "hd-xl": f.to-rem(-2.05),
+  "hd-l": f.to-rem(-1.5),
+);

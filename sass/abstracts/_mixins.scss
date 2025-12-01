@@ -9,6 +9,14 @@
 }
 /*fonts-mixins*/
 
+@mixin hd-xxxl() {
+  font-family: var.$font-family-primary;
+  font-size: map.get(var.$font-sz, "hd-xxxl");
+  font-weight: map.get(var.$fonts-w, "bold");
+  line-height: map.get(var.$line-h, "hd-xxxl");
+  word-spacing: map.get(var.$word-sp, "hd-xxl");
+}
+
 @mixin hd-xxl() {
   font-family: var.$font-family-primary;
   font-size: map.get(var.$font-sz, "hd-xxl");

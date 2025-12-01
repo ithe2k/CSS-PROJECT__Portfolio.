@@ -50,11 +50,17 @@ main {
       @include abs.bp("md") {
         @include abs.hd-l;
       }
+      @include abs.bp("xxxl") {
+        @include abs.hd-xl;
+      }
     }
     p {
       @include abs.bd-m();
       @include abs.bp("md") {
         @include abs.bd-l;
+      }
+      @include abs.bp("xxxl") {
+        @include abs.bd-xl;
       }
     }
     &::before {
@@ -79,7 +85,7 @@ main {
       @include abs.bp("lg") {
         bottom: 20%;
         left: 85%;
-            overflow-x: hidden;
+        overflow-x: hidden;
       }
     }
   }
@@ -105,6 +111,9 @@ main {
         font-weight: 700;
         @include abs.bp("md") {
           @include abs.hd-xl();
+        }
+        @include abs.bp("xxxl") {
+          @include abs.hd-xxl;
         }
       }
     }
@@ -152,9 +161,13 @@ main {
             opacity: 1;
           }
         }
-         @include abs.bp("xxl"){
-            padding: 151px 191px;
-         }
+
+        @include abs.bp("xxl") {
+          padding: 151px 191px;
+        }
+        @include abs.bp("xxxl") {
+          padding: 222px 229px;
+        }
       }
     }
   }
